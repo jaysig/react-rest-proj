@@ -1,0 +1,13 @@
+{
+  "name": "react-lu",
+  "private": true,
+  "scripts": {
+    "start": "meteor run"
+  },
+  "dependencies": {
+    "meteor-node-stubs": "~0.2.0",
+    "react": "^15.0.1",
+    "classnames": "^2.2.3",
+    "react-mounter": "^1.2.0"
+  }
+}
