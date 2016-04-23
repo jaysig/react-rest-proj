@@ -37,6 +37,7 @@ dburles:collection-helpers
 reywood:publish-composite
 mdg:validated-method
 mdg:validation-error
+meteortoys:allthings
 
 # routing
 kadira:flow-router@2.11.0
@@ -59,19 +60,19 @@ mobile-experience
 chriswessels:hammer
 
 # production
-juliancwirko:postcss@1.0.0-beta.11
-standard-minifier-js
-ddp-rate-limiter
-app-prod-security
+#juliancwirko:postcss@1.0.0-beta.11
+#standard-minifier-js
+#ddp-rate-limiter
+#app-prod-security
 
 # rest apis
 simple:rest-accounts-password
 simple:rest
 
 # testing
-factory
-publication-collector
-stub-collections
-xolvio:cleaner
-dispatch:mocha-phantomjs
-practicalmeteor:mocha@2.1.1-rc.1
+#factory
+#publication-collector
+#stub-collections
+#xolvio:cleaner
+#dispatch:mocha-phantomjs
+#practicalmeteor:mocha@2.1.1-rc.1
