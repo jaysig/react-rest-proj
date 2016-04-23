@@ -16,6 +16,9 @@ ecmascript
 es5-shim
 check
 tracker
+autopublish
+insecure
+ultimatejs:tracker-react
 
 # standard libraries
 jquery
@@ -76,3 +79,6 @@ simple:rest
 #xolvio:cleaner
 #dispatch:mocha-phantomjs
 #practicalmeteor:mocha@2.1.1-rc.1
+
+#stylin
+stolinski:stylus-multi
