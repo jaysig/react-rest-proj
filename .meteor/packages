@@ -16,8 +16,7 @@ ecmascript
 es5-shim
 check
 tracker
-autopublish
-insecure
+
 ultimatejs:tracker-react
 
 # standard libraries
