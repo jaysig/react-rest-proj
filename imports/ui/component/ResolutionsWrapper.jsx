@@ -7,8 +7,6 @@ import ResolutionSingle from './ResolutionSingle.jsx'
 
 import Resolutions from '../../api/resolutions/resolutions.js'
 
-// Resolutions = new Mongo.Collection("resolutions");
-
 export default class ResolutionsWrapper extends TrackerReact(React.Component) {
   constructor() {
     super();
@@ -21,7 +19,7 @@ export default class ResolutionsWrapper extends TrackerReact(React.Component) {
   }
 
   componentWillUnmount(){
-    this.state.subscription.resolutions.stop();
+    this.state.subscription.resolutions.stop(); //Removes the subscription once the component unmounts
   }
 
   resolutions() {
