@@ -51,7 +51,8 @@ kadira:flow-router@2.11.0
 tap:i18n
 
 # accounts
-#accounts-password
+accounts-ui
+accounts-password
 #useraccounts:unstyled
 #useraccounts:flow-routing
 #softwarerero:accounts-t9n
@@ -81,3 +82,5 @@ simple:rest
 
 #stylin
 stolinski:stylus-multi
+session
+themeteorchef:bert
