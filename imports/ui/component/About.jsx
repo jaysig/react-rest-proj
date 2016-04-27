@@ -20,7 +20,8 @@ export default class About extends Component {
         transitionLeaveTimeout={400}
         transitionAppear>
         <h1>About us</h1>
-        <p>BLAH BLAH BLAH</p>
+        <p>Revel was built with love from a team from all around the world. No matter who you are, we hope to make
+        your resturant experience a bit more magical</p>
         <button onClick={this.setVar}>Sign Up</button>
       </ReactCSSTransitionGroup>
     )

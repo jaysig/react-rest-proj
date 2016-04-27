@@ -21,7 +21,7 @@ export default class ResolutionsForm extends Component {
         <input
           type="text"
           ref="resolution"
-          placeholder="Finish React Meteor" />
+          placeholder="What resturant are you looking for?" />
       </form>
     )
   }

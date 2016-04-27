@@ -2,32 +2,32 @@ import React from 'react';
 import TrackerReact from 'meteor/ultimatejs:tracker-react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
-import ResolutionsForm from './ResolutionsForm.jsx'
-import ResolutionSingle from './ResolutionSingle.jsx'
-import Resolutions from '../../api/resolutions/resolutions.js'
+import ResturantsForm from './ResturantsForm.jsx'
+import ResturantSingle from './ResturantSingle.jsx'
+import Resturants from '../../../api/resturants/resturant-collection.js'
 
-export default class ResolutionsWrapper extends TrackerReact(React.Component) {
+export default class ResturantWrapper extends TrackerReact(React.Component) {
   constructor() {
     super();
 
     this.state = {
       subscription: {
-        resolutions: Meteor.subscribe("userResolutions")
+        resturants: Meteor.subscribe("resturants")
       }
     }
   }
 
   componentWillUnmount(){
-    this.state.subscription.resolutions.stop(); //Removes the subscription once the component unmounts
+    this.state.subscription.resturants.stop(); //Removes the subscription once the component unmounts
   }
 
-  resolutions() {
-    return Resolutions.find().fetch();
+  resturants() {
+    return Resturants.find().fetch();
   }
 
   render() {
-    let res = this.resolutions();
-    console.log(this.resolutions());
+    let res = this.resturants();
+    console.log(this.resturants());
     return (
       <ReactCSSTransitionGroup
         component="div"
@@ -37,15 +37,16 @@ export default class ResolutionsWrapper extends TrackerReact(React.Component) {
         transitionLeaveTimeout={400}
         transitionAppear>
           <h1>Resturant Party {Session.get('test')}</h1>
-          <ResolutionsForm />
+          <ResturantsForm />
           <ReactCSSTransitionGroup
             component="ul"
-            className="resolutions"
-            transitionName="resolutionLoad"
+            className="resturants"
+            transitionName="resturantLoad"
             transitionEnterTimeout={600}
             transitionLeaveTimeout={400}>
-            {this.resolutions().map( (resolution)=>{
-              return <ResolutionSingle key={resolution._id} resolution={resolution} />
+            {this.resturants().map( (resturant)=>{
+              console.log(resturant);
+              return <ResturantSingle key={resturant._id} resturant={resturant} />
             })}
             </ReactCSSTransitionGroup>
       </ReactCSSTransitionGroup>
