@@ -24,7 +24,8 @@ Meteor.methods({
   },
   deleteResolution(resolution) {
     check(resolution, Object);
-    if(!Meteor.userId() !== resolution.user) {
+    if(Meteor.userId() !== resolution.user) {
+      console.log(Meteor.userId + " hi " + resolution.user)
       throw new Meteor.Error('not-authorized');
     }
     Resolutions.remove(resolution._id);

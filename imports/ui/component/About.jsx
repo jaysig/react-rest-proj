@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 export default class About extends Component {
 
@@ -11,11 +12,17 @@ export default class About extends Component {
 
   render() {
     return (
-      <div>
+      <ReactCSSTransitionGroup
+        component="div"
+        transitionName="route"
+        transitionEnterTimeout={600}
+        transitionAppearTimeout={600}
+        transitionLeaveTimeout={400}
+        transitionAppear>
         <h1>About us</h1>
         <p>BLAH BLAH BLAH</p>
         <button onClick={this.setVar}>Sign Up</button>
-      </div>
+      </ReactCSSTransitionGroup>
     )
   }
 }
