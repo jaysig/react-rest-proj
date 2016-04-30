@@ -12,6 +12,22 @@ const ResturantSchema = new SimpleSchema({
   address: {
     type: String,
   },
+  opening_hours: {
+    type: Object,
+  },
+  tables: {
+    type: [Object],
+    optional: true,
+  },
+  'tables.$._id': {
+    type: Number,
+  },
+  'tables.$.table_number': {
+    type: Number,
+  },
+  'tables.$.location': {
+    type: String,
+  },
   createdAt: { // Force value to be current date (on server) upon insert and prevent updates thereafter.
     type: Date,
     autoValue: () => {
