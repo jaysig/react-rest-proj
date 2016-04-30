@@ -1,8 +1,16 @@
 /* global SimpleSchema, FlowRouter, DocHead, Orders, sAlert
 /* eslint-disable max-len, camelcase */
 /* eslint-disable max-len, camelcase */
+import { Random } from 'meteor/random';
 const Resturants = new Mongo.Collection('resturants');
 const ResturantSchema = new SimpleSchema({
+  // _id: {
+  //   type: String,
+  //   regEx: SimpleSchema.RegEx.Id,
+  //   autoValue: function() {
+  //     return Random.id();
+  //   },
+  // },
   name: {
     type: String,
   },
@@ -30,13 +38,13 @@ const ResturantSchema = new SimpleSchema({
   },
   createdAt: { // Force value to be current date (on server) upon insert and prevent updates thereafter.
     type: Date,
-    autoValue: () => {
+    autoValue: function () {
       if (this.isInsert) {
         return new Date();
       } else if (this.isUpsert) {
         return { $setOnInsert: new Date() };
       } else {
-        this.unset();  // Prevent user from supplying their own value
+          // Prevent user from supplying their own value
       }
     },
   },
@@ -48,5 +56,5 @@ const ResturantSchema = new SimpleSchema({
   },
 
 });
-Orders.attachSchema(ResturantSchema);
+Resturants.attachSchema(ResturantSchema);
 export default Resturants;

@@ -7,9 +7,9 @@ export const MainLayout = ({content}) => (
       <h2>Revel</h2>
       <nav>
         <a href="/"> Resolutions </a>
-        <a href="about">About</a>
+        <a href="/about">About</a>
         <a href="myReservations">My Reservations</a>
-        <a href="resturants">Resturants</a>
+        <a href="/resturants">Resturants</a>
         <AccountsUI />
         </nav>
       </header>
