@@ -12,7 +12,6 @@ Meteor.methods({
       address: resturant.address,
       createdAt: new Date(),
       owner: 'me',
-      user: Meteor.userId()
     });
   },
   // toggleResturant(resturant) {
