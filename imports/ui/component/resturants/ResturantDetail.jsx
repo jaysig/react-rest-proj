@@ -15,7 +15,7 @@ export default class ResturantDetail extends TrackerReact(React.Component) {
     }
   }
 
-  componentWillUnmount(){
+  componentWillUnmount() {
     // this.state.subscription.reservations.stop(); //Removes the subscription once the component unmounts
     this.state.subscription.resturants.stop();
   }
