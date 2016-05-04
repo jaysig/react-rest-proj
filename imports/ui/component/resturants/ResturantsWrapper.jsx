@@ -27,8 +27,8 @@ export default class ResturantWrapper extends TrackerReact(React.Component) {
   }
   updateSearch(event) {
     console.log('hello');
-    console.log(event.target.value);
-    this.setState({ search: event.target.value });
+    console.log(event.target.value.toLowerCase());
+    this.setState({ search: event.target.value.toLowerCase() });
   }
   render() {
     let res = this.resturants();
@@ -49,18 +49,19 @@ export default class ResturantWrapper extends TrackerReact(React.Component) {
         transitionLeaveTimeout={400}
         transitionAppear>
           <h1>Resturant Party {Session.get('test')}</h1>
+          <input type="text"
+            value={this.state.search}
+            onChange={this.updateSearch.bind(this)}/>
           {/*<ResturantsForm />*/}
           <ReactCSSTransitionGroup
             component="ul"
-            className="resturants"
+            className="content-grid mdl-grid"
             transitionName="resturantLoad"
             transitionEnterTimeout={600}
             transitionLeaveTimeout={400}>
-            <input type="text"
-              value={this.state.search}
-              onChange={this.updateSearch.bind(this)}/>
             {filteredList.map( (resturant)=>{
-              return <ResturantSingle key={resturant._id} resturant={resturant} />
+              return <ResturantSingle
+              key={resturant._id} resturant={resturant} />
             })}
             </ReactCSSTransitionGroup>
       </ReactCSSTransitionGroup>

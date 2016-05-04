@@ -1,9 +1,10 @@
 import React from 'react';
 import AccountsUI from '../component/accounts/AccountsUI.jsx'
+import Footer from './Footer.jsx'
 
 export const MainLayout = ({content}) => (
   <div className="main-layout">
-  <header>
+    <header>
       <h2>Revel</h2>
       <nav>
         <a href="/"> Resolutions </a>
@@ -11,10 +12,11 @@ export const MainLayout = ({content}) => (
         <a href="myReservations">My Reservations</a>
         <a href="/resturants">Resturants</a>
         <AccountsUI />
-        </nav>
-      </header>
-      <main>
+      </nav>
+    </header>
+    <main>
         {content}
-      </main>
+    </main>
+    <Footer />
   </div>
 )
